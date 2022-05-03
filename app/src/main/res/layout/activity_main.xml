@@ -75,4 +75,7 @@
         android:gravity="center"
         android:onClick="scanBluetooth"
         android:text="Scan Bluetooth" />
+
+
+
 </LinearLayout>
