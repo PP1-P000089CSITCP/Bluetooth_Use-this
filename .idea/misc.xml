@@ -18,6 +18,11 @@
         <entry key="..\:/example/mybluetooth-kotlin-master/app/src/main/res/drawable/progressbar.xml" value="0.1" />
         <entry key="..\:/example/mybluetooth-kotlin-master/app/src/main/res/layout/activity_main.xml" value="0.1875" />
         <entry key="..\:/example/mybluetooth-kotlin-master/app/src/main/res/layout/item_device_list.xml" value="0.1875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/layout/battery_information.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_device_list.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/layout/main_page.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.24166666666666667" />
       </map>
     </option>
   </component>
