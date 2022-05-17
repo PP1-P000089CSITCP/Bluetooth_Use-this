@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.llw.bluetooth">
-
-    <!--Bluetooth connection permission-->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <!--Bluetooth communication permission-->
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
-    <!--Location information to obtain accurate location-->
-    <!--For Android 6.0 and subsequent versions, the following permissions need to be added when using Bluetooth scanning, and the permissions need to be applied dynamically when using-->
+    <!-- Bluetooth connection permission -->
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- Bluetooth communication permission -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- Location information to obtain accurate location -->
+    <!-- For Android 6.0 and subsequent versions, the following permissions need to be added when using Bluetooth scanning, and the permissions need to be applied dynamically when using -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -18,6 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".battery_info"
+            android:exported="false" />
         <activity android:name=".MainPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
