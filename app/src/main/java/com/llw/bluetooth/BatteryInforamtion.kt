@@ -11,6 +11,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.lang.Math.abs
 
+/*
+    Part 3 _ Getting information from local device
+    Author: Yinglin Duan
+    Date : 2022/05/19
+ */
 
 class BatteryInforamtion : AppCompatActivity() {
 
@@ -36,10 +41,14 @@ class BatteryInforamtion : AppCompatActivity() {
     private val myBroadcastRecevier = object : BroadcastReceiver(){
         override fun onReceive(context: Context, intent: Intent) {
 
+            // Adding information in there
             val stringBuilder = StringBuilder()
 
+            // Getting battery level
             val batteryPercentage = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
 
+
+            // Adding first information
             stringBuilder.append("Battery percentage:\n", batteryPercentage,"%")
 
 
@@ -70,6 +79,8 @@ class BatteryInforamtion : AppCompatActivity() {
 
             stringBuilder.append("\nBattery Heath\n")
 
+
+            // Getting battery health status
             when(intent.getIntExtra(BatteryManager.EXTRA_HEALTH,0 ) ){
                 BatteryManager.BATTERY_HEALTH_OVERHEAT -> stringBuilder.append("Over Heat\n")
                 BatteryManager.BATTERY_HEALTH_COLD -> stringBuilder.append("Cold\n")
@@ -84,6 +95,8 @@ class BatteryInforamtion : AppCompatActivity() {
 
             stringBuilder.append("\nTemperature:\n")
 
+
+            // Getting battery temp
             val temperatureInCelsius = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0) / 10
 
 
@@ -95,6 +108,8 @@ class BatteryInforamtion : AppCompatActivity() {
 
             stringBuilder.append("\nPower source:\n")
 
+
+            // Battery plugged information
             when(intent.getIntExtra(BatteryManager.EXTRA_PLUGGED,-1)){
                 BatteryManager.BATTERY_PLUGGED_AC -> stringBuilder.append("AC adpter\n")
                 BatteryManager.BATTERY_PLUGGED_USB -> stringBuilder.append("USB connection\n")
@@ -105,6 +120,8 @@ class BatteryInforamtion : AppCompatActivity() {
 
             stringBuilder.append("\nChargin status:\n")
 
+
+            //Battery charging information
             when(intent.getIntExtra(BatteryManager.EXTRA_STATUS,-1)){
                 BatteryManager.BATTERY_STATUS_CHARGING -> stringBuilder.append("Charging\n")
                 BatteryManager.BATTERY_STATUS_DISCHARGING -> stringBuilder.append("Not Charging\n")
@@ -115,12 +132,14 @@ class BatteryInforamtion : AppCompatActivity() {
                     stringBuilder.append("Unknown\n")
             }
 
+            // Battery max Voltage
+
             val voltage = intent.getIntExtra(BatteryManager.EXTRA_VOLTAGE,0).toDouble()/100
 
             stringBuilder.append("\nVoltage:\n",voltage, "V\n")
 
 
-
+            // Calling layout.
             val myTextView = findViewById<TextView>(R.id.battery_information)
             myTextView.text = stringBuilder
 
