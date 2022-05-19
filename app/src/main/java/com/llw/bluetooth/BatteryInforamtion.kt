@@ -6,10 +6,14 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.lang.Math.abs
+
 
 class BatteryInforamtion : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.battery_information)
@@ -17,14 +21,49 @@ class BatteryInforamtion : AppCompatActivity() {
         val intentFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
 
         this.registerReceiver(myBroadcastRecevier, intentFilter)
+
+        /*
+        button = findViewById<Button>(R.id.button_back)
+        button.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java )
+            startActivity(intent)
+        }
+
+         */
+
+
     }
     private val myBroadcastRecevier = object : BroadcastReceiver(){
         override fun onReceive(context: Context, intent: Intent) {
+
             val stringBuilder = StringBuilder()
 
             val batteryPercentage = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
 
             stringBuilder.append("Battery percentage:\n", batteryPercentage,"%")
+
+
+            val batteryManager : BatteryManager = applicationContext.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+
+
+            /*
+            //Current Cap
+            val valueOfCap = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+            // Remaining battery capacity in microampere-hours mAH
+            val valueOfChargeCounter = batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER)
+            // Cost
+            val valueOfCost = batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW)
+
+            // get remaining times(Mins)
+            val remainTime = (valueOfChargeCounter / valueOfCost) * 60
+
+            stringBuilder.append(valueOfCap,"\n")
+            stringBuilder.append(valueOfChargeCounter,"\n")
+            stringBuilder.append(valueOfCost,"\n")
+            stringBuilder.append(remainTime,"\n")
+            */
+
+
 
             stringBuilder.append("\n")
 
@@ -81,6 +120,7 @@ class BatteryInforamtion : AppCompatActivity() {
             stringBuilder.append("\nVoltage:\n",voltage, "V\n")
 
 
+
             val myTextView = findViewById<TextView>(R.id.battery_information)
             myTextView.text = stringBuilder
 
@@ -92,4 +132,5 @@ class BatteryInforamtion : AppCompatActivity() {
         unregisterReceiver(myBroadcastRecevier)
         super.onDestroy()
     }
+
 }

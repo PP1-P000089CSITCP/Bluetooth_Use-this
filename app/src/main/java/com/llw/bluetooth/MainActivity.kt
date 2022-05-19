@@ -18,7 +18,8 @@ import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
-
+import android.widget.Button
+import kotlinx.android.synthetic.main.battery_information.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,17 +38,27 @@ class MainActivity : AppCompatActivity() {
     //请求码
     private val REQUEST_ENABLE_BLUETOOTH = 1
 
+    // For Local Button
+    lateinit var button : Button;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //设置亮色状态栏模式 systemUiVisibility在Android11中弃用了，可以尝试一下。
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         //检查版本
         checkVersion()
+
+        // Jumping to new activity(battery_information)
+        button = findViewById<Button>(R.id.button_for_device)
+        button.setOnClickListener {
+            val intent = Intent(this, BatteryInforamtion::class.java )
+            startActivity(intent)
+        }
 
     }
 
