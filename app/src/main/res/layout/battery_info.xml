@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".battery_info">
+    tools:context="BatteryInformation">
 
     <Button
         android:id="@+id/back_to_two"
@@ -35,6 +35,14 @@
                 android:layout_span="2"
                 android:src="@drawable/battery"
                 app:srcCompat="@drawable/battery" />
+            <TextView
+                android:id="@+id/percent_info"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textAlignment="center"
+                android:textSize="32sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow android:textAlignment="center">
@@ -46,7 +54,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_span="2"
-                android:text="2 HR 34 MIN"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -82,7 +89,6 @@
                     android:layout_width="128dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="20C"
                     android:textAlignment="center"
                     android:textSize="32sp"
                     android:textStyle="bold" />
@@ -120,7 +126,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="24dp"
-                    android:text="1.3A"
                     android:textAlignment="center"
                     android:textSize="32sp"
                     android:textStyle="bold" />
@@ -159,7 +164,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="24dp"
-                    android:text="21.7V"
                     android:textAlignment="center"
                     android:textSize="32sp"
                     android:textStyle="bold" />
@@ -198,7 +202,6 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:text="20C"
                     android:textAlignment="center"
                     android:textSize="32sp"
                     android:textStyle="bold" />
