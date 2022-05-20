@@ -49,7 +49,7 @@ class BatteryInforamtion : AppCompatActivity() {
 
 
             // Adding first information
-            stringBuilder.append("Battery percentage:\n", batteryPercentage,"%")
+            stringBuilder.append("Battery Percentage:\n", batteryPercentage,"%")
 
 
             val batteryManager : BatteryManager = applicationContext.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
@@ -86,8 +86,8 @@ class BatteryInforamtion : AppCompatActivity() {
                 BatteryManager.BATTERY_HEALTH_COLD -> stringBuilder.append("Cold\n")
                 BatteryManager.BATTERY_HEALTH_DEAD -> stringBuilder.append("Dead\n")
                 BatteryManager.BATTERY_HEALTH_GOOD -> stringBuilder.append("Good\n")
-                BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE -> stringBuilder.append("Over voltage\n")
-                BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE -> stringBuilder.append("failure\n")
+                BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE -> stringBuilder.append("Over Voltage\n")
+                BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE -> stringBuilder.append("Failure\n")
                 else ->
                     stringBuilder.append("Unknown\n")
             }
@@ -106,19 +106,19 @@ class BatteryInforamtion : AppCompatActivity() {
 
             stringBuilder.append(temperatureFahrenheit,"°F\n")
 
-            stringBuilder.append("\nPower source:\n")
+            stringBuilder.append("\nPower Source:\n")
 
 
             // Battery plugged information
             when(intent.getIntExtra(BatteryManager.EXTRA_PLUGGED,-1)){
-                BatteryManager.BATTERY_PLUGGED_AC -> stringBuilder.append("AC adapter\n")
-                BatteryManager.BATTERY_PLUGGED_USB -> stringBuilder.append("USB connection\n")
-                BatteryManager.BATTERY_PLUGGED_WIRELESS -> stringBuilder.append("Wireless connection\n")
+                BatteryManager.BATTERY_PLUGGED_AC -> stringBuilder.append("AC Adapter\n")
+                BatteryManager.BATTERY_PLUGGED_USB -> stringBuilder.append("USB Connection\n")
+                BatteryManager.BATTERY_PLUGGED_WIRELESS -> stringBuilder.append("Wireless Connection\n")
                 else ->
                     stringBuilder.append("No Power Source\n")
             }
 
-            stringBuilder.append("\nCharging status:\n")
+            stringBuilder.append("\nCharging Status:\n")
 
 
             //Battery charging information
