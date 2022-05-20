@@ -111,14 +111,14 @@ class BatteryInforamtion : AppCompatActivity() {
 
             // Battery plugged information
             when(intent.getIntExtra(BatteryManager.EXTRA_PLUGGED,-1)){
-                BatteryManager.BATTERY_PLUGGED_AC -> stringBuilder.append("AC adpter\n")
+                BatteryManager.BATTERY_PLUGGED_AC -> stringBuilder.append("AC adapter\n")
                 BatteryManager.BATTERY_PLUGGED_USB -> stringBuilder.append("USB connection\n")
                 BatteryManager.BATTERY_PLUGGED_WIRELESS -> stringBuilder.append("Wireless connection\n")
                 else ->
                     stringBuilder.append("No Power Source\n")
             }
 
-            stringBuilder.append("\nChargin status:\n")
+            stringBuilder.append("\nCharging status:\n")
 
 
             //Battery charging information
