@@ -23,7 +23,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
-
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
     //Request code
     private val REQUEST_ENABLE_BLUETOOTH = 1
 
+    // For Local Button
+    lateinit var button : Button;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +52,13 @@ class MainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         checkVersion()
+
+        // Jumping to new activity(battery_information)
+        button = findViewById<Button>(R.id.button_for_device)
+        button.setOnClickListener {
+            val intent = Intent(this, BatteryInforamtion::class.java )
+            startActivity(intent)
+        }
 
     }
 
