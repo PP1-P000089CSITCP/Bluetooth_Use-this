@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageView
+        android:id="@+id/backgroundimage1"
+        android:layout_width="319dp"
+        android:layout_height="283dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.196"
+        app:srcCompat="@drawable/batteryinformationbackground" />
+
+    <TextView
+        android:id="@+id/maxvoltagetext"
+        android:layout_width="136dp"
+        android:layout_height="56dp"
+        android:text="Max Voltage"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/minvoltagetext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundimage1"
+        app:layout_constraintVertical_bias="0.491" />
+
+    <TextView
+        android:id="@+id/minvoltagetext"
+        android:layout_width="136dp"
+        android:layout_height="56dp"
+        android:text="Min Voltage"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/avgvoltagetext"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundimage1"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="@+id/backgroundimage1"
+        app:layout_constraintTop_toTopOf="@+id/backgroundimage1"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <TextView
+        android:id="@+id/avgvoltagetext"
+        android:layout_width="136dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="196dp"
+        android:text="Avg Voltages"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundimage1"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="@+id/backgroundimage1"
+        app:layout_constraintTop_toTopOf="@+id/backgroundimage1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="100dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroundimage1">
+
+            <Button
+                android:id="@+id/scrollview1"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backgroundimage1"
+                app:layout_constraintVertical_bias="0.112" />
+
+            <Button
+                android:id="@+id/scrollview2"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview1"
+                app:layout_constraintVertical_bias="0.115" />
+
+            <Button
+                android:id="@+id/scrollview3"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview2"
+                app:layout_constraintVertical_bias="0.168" />
+
+            <Button
+                android:id="@+id/scrollview4"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview3" />
+
+            <Button
+                android:id="@+id/scrollview5"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview4" />
+
+            <Button
+                android:id="@+id/scrollview6"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview5" />
+
+            <Button
+                android:id="@+id/scrollview7"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#7"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview6" />
+
+            <Button
+                android:id="@+id/scrollview8"
+                android:layout_width="321dp"
+                android:layout_height="59dp"
+                android:text="#8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview7" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
