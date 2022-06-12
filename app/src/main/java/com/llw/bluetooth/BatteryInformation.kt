@@ -17,7 +17,7 @@ import java.lang.Math.abs
     Date : 2022/05/19
  */
 
-class BatteryInforamtion : AppCompatActivity() {
+class BatteryInformation : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

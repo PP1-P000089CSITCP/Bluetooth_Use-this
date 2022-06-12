@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         // Jumping to new activity(battery_information)
         button = findViewById<Button>(R.id.button_for_device)
         button.setOnClickListener {
-            val intent = Intent(this, BatteryInforamtion::class.java )
+            val intent = Intent(this, BatteryTileInformation::class.java )
             startActivity(intent)
         }
 
